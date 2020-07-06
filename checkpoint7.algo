@@ -1,0 +1,30 @@
+PROCEDURE dot_product(VAR A1,A2 : ARRAY_OF INTEGER[50])
+VAR
+    i:INTEGER;
+BEGIN
+    FOR i FROM 0 TO A1.length STEP 1  DO
+        S:=S+(A1[i]*A2[i]);
+    END_FOR
+    write(S);
+END
+/////
+FUNCTION dot_product(A1,A2 : ARRAY_OF INTEGER[50]) : INTEGER
+VAR
+    i:INTEGER;
+BEGIN
+    FOR i FROM 0 TO A1.length STEP 1  DO
+        S:=S+(A1[i]*A2[i]);
+    END_FOR
+    RETURN S;
+END
+ALGORITHM algorithm_name
+VAR
+    NUM1,NUM2 : ARRAY_OF INTEGER[50],
+    S:INTEGER:=0;
+BEGIN
+    dot_product(NUM1,NUM2)
+    write(S)
+    IF (S=0) THEN
+        write("the two vectors are orthogonal")
+    END_IF
+END
